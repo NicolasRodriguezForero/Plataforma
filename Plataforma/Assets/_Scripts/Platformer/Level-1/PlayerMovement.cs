@@ -6,18 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
 
     // Se declara la variable para acceder al script OldInput.
-    private OldInput _oldInput;
-    // Se declara la variable para la velocidad de movimiento.
+    private NewInput _newInput;
+
+    private Rigidbody2D _rb;
     public float speed = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        _oldInput = GetComponent<OldInput>();        
+        PlayerStats.score = 0;
+        _newInput = GetComponent<NewInput>();      
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Movement();
     }
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // Método para mover al jugador. Multiplicar el vector por el tiempo para que se mueva de manera suave.
     public void Movement()
     {
-        transform.Translate(Vector3.right * _oldInput.horizontal * speed * Time.deltaTime);
+        //transform.Translate(Vector3.right * _newInput.inputX * speed * Time.deltaTime);
+        _rb.velocity = new Vector2(_newInput.inputX * speed, _rb.velocity.y);
     }
 }
