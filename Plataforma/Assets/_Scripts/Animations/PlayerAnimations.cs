@@ -33,14 +33,14 @@ public class PlayerAnimations : MonoBehaviour
             _animator.SetBool("Walk", false);
         }
 
-        // Voltear sprite según dirección
-        if (_newInput.inputX < 0)
-        {
-            _sprite.flipX = true;
-        }
-        else if (_newInput.inputX > 0)
-        {
-            _sprite.flipX = false;
-        }
+        // // Voltear sprite según dirección
+        // if (_newInput.inputX < 0)
+        // {
+        //     _sprite.flipX = true;
+        // }
+        // else if (_newInput.inputX > 0)
+        // {
+        //     _sprite.flipX = false;
+        // }
     }
 }
