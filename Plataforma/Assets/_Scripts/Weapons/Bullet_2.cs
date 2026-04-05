@@ -28,6 +28,11 @@ public class Bullet_2 : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
+            SpriteRenderer enemySprite = collision.GetComponent<SpriteRenderer>();
+            if (enemySprite != null)
+            {
+                enemySprite.color = Color.red;
+            }
             Destroy(gameObject);
         }
         else if(collision.CompareTag("Wall"))

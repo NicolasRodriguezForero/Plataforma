@@ -40,7 +40,8 @@ public class PlayerShoot : MonoBehaviour
         else
             return;
         GameObject bulletClone = Instantiate(selectedBullet, startPos.position, startPos.rotation);
-        Destroy(bulletClone, 1);
+        if (selectedBullet == bullet_1)
+            Destroy(bulletClone, 1);
     }
 
     public void RefillAmmo()
