@@ -39,6 +39,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             speed = 0;
+            rb.velocity = Vector2.zero;
         }
     }
 
