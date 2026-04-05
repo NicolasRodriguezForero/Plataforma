@@ -403,6 +403,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8aed3c2f-8db5-4179-adea-74919060fb53
     m_ActionName: Player/Shoot[/Keyboard/leftCtrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 202929450}
+        m_TargetAssemblyTypeName: PlayerShoot, Assembly-CSharp
+        m_MethodName: SelectBullet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 83ec2057-7334-40e4-803a-1007606265ef
+    m_ActionName: Player/ChangeBullet
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -492,9 +508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9320962b315d85a4592d507f881b3ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7767641339260423970, guid: 19acdfb927037e94f8de15a2fc42ed51, type: 3}
+  bullet_1: {fileID: 7767641339260423970, guid: 19acdfb927037e94f8de15a2fc42ed51, type: 3}
+  bullet_2: {fileID: 7767641339260423970, guid: 23fd12bb6f5537d4291126aa8ca189d1, type: 3}
   startPos: {fileID: 1760301064}
-  maxShotsPerGame: 3
+  maxShotsPerGameBullet1: 3
+  maxShotsPerGameBullet2: 3
 --- !u!1 &204895921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4780,7 +4798,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1998180810, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
       - {fileID: -930563785, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 5, z: 0}
@@ -4789,7 +4807,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1998180810, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
       - {fileID: -930563785, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -3, y: 5, z: 0}
