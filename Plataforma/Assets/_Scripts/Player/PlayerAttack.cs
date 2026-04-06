@@ -15,8 +15,11 @@ public class PlayerAttack : MonoBehaviour
         if (collision.CompareTag("Enemy") && _rb.velocity.y < 0)
         {
             _rb.velocity = new Vector2(_rb.velocity.x, bounceForce);
-            collision.GetComponent<EnemyMovement>().canMove = false;
-            Destroy(collision.gameObject, 0.1f);
+            var enemy = collision.GetComponentInParent<EnemyMovement>();
+            if (enemy != null)
+                enemy.Die();
+            else
+                Destroy(collision.transform.root.gameObject, 0.1f);
         }
     }
 }

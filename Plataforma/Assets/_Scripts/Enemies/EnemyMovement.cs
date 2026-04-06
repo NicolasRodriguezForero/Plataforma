@@ -19,6 +19,10 @@ public class EnemyMovement : MonoBehaviour
 
     [HideInInspector] public bool canMove;
 
+    [SerializeField] float destroyAfterDeathSeconds = 2f;
+
+    bool _dead;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +74,25 @@ public class EnemyMovement : MonoBehaviour
             rb.velocity = new Vector2(-speed, 0);
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
+    }
+
+    public void Die()
+    {
+        if (_dead)
+            return;
+        _dead = true;
+        canMove = false;
+
+        var anim = GetComponent<Animator>()
+            ?? GetComponentInChildren<Animator>()
+            ?? GetComponentInParent<Animator>();
+        if (anim != null)
+            anim.SetBool("IsDeath", true);
+
+        foreach (var col in GetComponentsInChildren<Collider2D>())
+            col.enabled = false;
+
+        Destroy(gameObject, destroyAfterDeathSeconds);
     }
 
 }

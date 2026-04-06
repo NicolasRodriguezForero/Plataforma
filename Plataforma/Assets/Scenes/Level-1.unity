@@ -4798,7 +4798,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1998180810, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
       - {fileID: -930563785, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 5, z: 0}
@@ -6134,6 +6134,7 @@ GameObject:
   - component: {fileID: 1914209674}
   - component: {fileID: 1914209673}
   - component: {fileID: 1914209677}
+  - component: {fileID: 1914209678}
   m_Layer: 0
   m_Name: BadGuy
   m_TagString: Enemy
@@ -6172,6 +6173,7 @@ MonoBehaviour:
   pointB: {fileID: 458891081}
   speed: 5
   canMove: 0
+  destroyAfterDeathSeconds: 2
 --- !u!61 &1914209674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6341,6 +6343,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3494758, y: 0.08786559}
   m_EdgeRadius: 0
+--- !u!95 &1914209678
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914209671}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ff541db7cd692449b5fa8853480dffc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1949969538
 GameObject:
   m_ObjectHideFlags: 0

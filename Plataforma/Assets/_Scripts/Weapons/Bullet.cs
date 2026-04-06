@@ -28,7 +28,11 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
+            var enemy = collision.GetComponentInParent<EnemyMovement>();
+            if (enemy != null)
+                enemy.Die();
+            else
+                Destroy(collision.transform.root.gameObject);
             Destroy(gameObject);
         }
         else if(collision.CompareTag("Wall"))
