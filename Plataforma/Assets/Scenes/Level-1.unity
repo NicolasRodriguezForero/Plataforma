@@ -754,9 +754,9 @@ MonoBehaviour:
   player: {fileID: 202929436}
   enemyBullet: {fileID: 8553829042624775854, guid: 3071e643ac1c04846a5a6b3fad5eef1c, type: 3}
   shootPos: {fileID: 1644080976}
-  timeBetweenShots: 2
-  minDistance: 50
-  bulletSpeed: 10
+  timeBetweenShots: 1
+  minDistance: 20
+  bulletSpeed: 5
 --- !u!212 &289021299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5169,7 +5169,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1998180810, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
       - {fileID: -930563785, guid: 4c168ea2ada368e4ebb3bfc6bd6020b2, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -3, y: 6, z: 0}
